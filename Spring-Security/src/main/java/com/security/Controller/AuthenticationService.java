@@ -14,14 +14,14 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
 
     public AuthenticationResponse rigister(RegisterRequest request) {
-        var user = User.builder()
+        var user1 = User.builder()
                 .username(request.getFname())
                 .username(request.getLname())
                 .username((request.getEmail()))
                 .password(passwordEncoder.encode(request.getPassword()))
                 .roles(String.valueOf(Role.User))
                 .build();
-        repository.save(user);
+        //repository.save(user1);
         return null;
     }
 
