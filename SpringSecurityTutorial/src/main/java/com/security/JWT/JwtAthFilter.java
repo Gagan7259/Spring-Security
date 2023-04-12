@@ -1,13 +1,14 @@
 package com.security.JWT;
 
+import com.security.dao.Userdao;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -15,15 +16,13 @@ import java.io.IOException;
 
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
+@RequiredArgsConstructor
+
 public class JwtAthFilter extends OncePerRequestFilter {
 
-    private final UserDetailsService userDetailsService;
+    private final Userdao userdao;
     private final JwtUtills jwtUtills;
 
-    public JwtAthFilter(UserDetailsService userDetailsService, JwtUtills jwtUtills) {
-        this.userDetailsService = userDetailsService;
-        this.jwtUtills = jwtUtills;
-    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -37,7 +36,7 @@ public class JwtAthFilter extends OncePerRequestFilter {
         jwtToken = authHeader.substring(7);
         userEmail = jwtUtills.extractUsername(jwtToken);
         if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
+            UserDetails userDetails = userdao.findUserByEmail(userEmail);
             final boolean isTokenValid;
             if (jwtUtills.isTokenValid(jwtToken, userDetails)) {
                 UsernamePasswordAuthenticationToken authtoken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
