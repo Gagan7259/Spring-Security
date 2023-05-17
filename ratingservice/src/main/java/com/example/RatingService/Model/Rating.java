@@ -1,4 +1,4 @@
-package com.ratingservice.Entity;
+package com.example.RatingService.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -8,18 +8,17 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("user_ratings")
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ratingg {
+@Document("user_ratings")
+public class Rating {
     @Id
     private String ratingId;
-    private String hotelid;
     private String userId;
-    private int rating;
+    private String hotelId;
     private String feedback;
-
-
+    private int rating;
 }
