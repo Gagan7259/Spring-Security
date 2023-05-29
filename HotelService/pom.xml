@@ -45,6 +45,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.aries.jpa</groupId>
+            <artifactId>org.apache.aries.jpa.blueprint</artifactId>
+            <version>2.7.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openwms</groupId>
+            <artifactId>org.openwms.core.integration.eclipselink</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

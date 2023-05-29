@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class RatingServiceImpl implements RatingService {
@@ -15,6 +16,8 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public Rating createratings(Rating rating) {
+        String s = UUID.randomUUID().toString();
+        rating.setRatingId(s);
         return ratingRepository.save(rating);
     }
 
@@ -25,12 +28,12 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public List<Rating> getratingbyuserId(String userId) {
-        return ratingRepository.findbyuserId(userId);
+        return ratingRepository.findByuserId(userId);
     }
 
     @Override
     public List<Rating> getratingbyhotelId(String hotelId) {
-        return ratingRepository.findbyhotelId(hotelId);
+        return ratingRepository.findByhotelId(hotelId);
     }
 
 

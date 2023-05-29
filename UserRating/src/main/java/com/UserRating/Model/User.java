@@ -8,12 +8,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "miceoservices")
 public class User {
     @Id
     @Column(name = "ID")
-    @Getter
-    @Setter
+
     private String UserId;
     @Column(name = "NAME", length = 20)
 

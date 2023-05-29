@@ -9,7 +9,7 @@ public interface RatingRepository extends MongoRepository<Rating, String> {
 
     //custom methods
 
-    List<Rating> findbyuserId(String userId);
+    List<Rating> findByuserId(String userId);
 
-    List<Rating> findbyhotelId(String hotelId);
+    List<Rating> findByhotelId(String hotelId);
 }
