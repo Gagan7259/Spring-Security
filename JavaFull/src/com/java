@@ -1,0 +1,11 @@
+OOPs=object oriented programing
+
+Object:lot of methods ,variables
+JDK:Java Development Kit
+    JVM:Java Virtual Machine
+          its converts machine code into bytecode
+          its part of the JRE
+    JRE:Java Runtime Environment
+        It's Run the code where jvm converts machine code into bytecode
+
+
