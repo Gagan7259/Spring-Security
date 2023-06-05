@@ -5,7 +5,58 @@ JDK:Java Development Kit
     JVM:Java Virtual Machine
           its converts machine code into bytecode
           its part of the JRE
+          Last-In First-Out methpod
+
+          ianside memory called as 1.Stack Memory
+                                   2.Heap Memory
+          * every method have own Stack
+             stack have Key and Value
+
+
+
+
     JRE:Java Runtime Environment
         It's Run the code where jvm converts machine code into bytecode
 
 
+VARIABLES:
+           1.Instance:its created within the class
+           2.local   : its created by within the metod or function
+           3.static  : create variable with "STATIC" keyword it's all the objects
+                     its call with class name best way
+
+
+DrawBacks Of Array:
+                   we cant expand the arrray size
+
+  Classses Interfaces are First letter "Capital":
+                                                   Major , Palindrome, Fibbonacci
+  variable amd method are start with the "small" letters:
+                                                          age , name, email
+  constants all are "UPPERCASE"
+                                CONSTANT , AGE
+
+
+ACCESMODIFIERS:
+ wherecan use         public   private      default    Protected
+same class              YES      YES          YES         YES
+
+samepackage
+subclass                YES        NO         YES          YES
+
+samepackage             YES        NO         YES          YES
+non-subclass
+
+diffrentpackage         YES        NO         NO          YES
+subclass
+
+diffrentpackage         YES        NO         NO          NO
+non-subclass
+
+
+POLYMORPHISM:
+             poly=many
+             morphism:Behaviour
+Two Types
+1.Compile time
+2.Run ime
